@@ -1,0 +1,21 @@
+{% extends "wagtailadmin/account/password_reset/confirm.html" %}
+
+{% load static %}
+
+{% block branding_title %}Restablecer contraseña{% endblock %}
+
+{% block branding_favicon %}
+<link rel="shortcut icon" href="{% static 'cms-backend/images/favicon.svg' %}" />
+{% endblock %}
+
+{% block branding_login %}
+<div>
+    <div>
+        <img src="{% static 'cms-backend/images/logo.svg' %}" alt="Logo" width="205" height="184" />
+    </div>
+</div>
+{% endblock %}
+
+{% block branding_logo %}
+
+{% endblock %}

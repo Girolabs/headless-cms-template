@@ -1,0 +1,30 @@
+{% extends "wagtailadmin/account/password_reset/done.html" %}
+
+{% load static %}
+
+{% block branding_title %}Restablecer contraseña{% endblock %}
+
+{% block branding_favicon %}
+<link rel="shortcut icon" href="{% static 'cms-backend/images/favicon.svg' %}" />
+{% endblock %}
+
+{% block branding_login %}
+<div>
+    <div>
+        <img src="{% static 'cms-backend/images/logo.svg' %}" alt="Logo" width="205" height="184" />
+    </div>
+</div>
+{% endblock %}
+
+{% block branding_logo %}
+
+{% endblock %}
+
+
+{% block furniture %}
+<main class="content-wrapper" id="main">
+    <h1>Revisa tu correo electrónico</h1>
+    <p>Un enlace para restablecer su contraseña le ha sido enviado por correo electrónico si una cuenta
+        existe con esta dirección.</p>
+</main>
+{% endblock %}

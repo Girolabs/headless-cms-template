@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dotenv = "*"
+django = "~=3.2.7"
+djangorestframework = "*"
+django-cors-headers = "*"
+djangorestframework-camel-case = "*"
+wagtail = "<4.1,>=4.0"
+wagtail-modeladmin-sortable = "*"
+gunicorn = "*"
+uvicorn = "*"
+mysqlclient = "*"
