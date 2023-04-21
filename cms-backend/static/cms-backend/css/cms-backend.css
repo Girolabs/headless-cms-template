@@ -1,0 +1,160 @@
+:root {
+    --w-color-primary: #2E1F5E;
+    --w-color-white: #FFFFFF;
+
+    /* Any valid CSS format is supported. */
+    --w-color-primary-200: #261A4E;
+
+    /* Set each HSL component separately to change all hues at once. */
+    --w-color-secondary-hue: 180;
+    --w-color-secondary-saturation: 100%;
+    --w-color-secondary-lightness: 25%;
+
+    /* Buttons */
+    --w-color-secondary: #007D7E;
+    --w-color-secondary-400: #005B5E;
+    --w-color-secondary-600: #004345;
+
+    /* Custom */
+    --custom-color-black: #1D1D1B;
+    --custom-color-gray: #999997;
+    --custom-calendar-color: var(--w-color-secondary-75);
+}
+
+/* Header */
+.w-header h1,
+.w-header,
+.w-header__title,
+.w-text-white,
+::placeholder,
+
+/* Ediciones recientes */
+.w-panel__heading,
+.listing .title .title-wrapper a,
+.listing .title h2 a,
+
+/* Status */
+/* .status-tag.primary */
+.w-label-1,
+.w-label-2 {
+    color: var(--custom-color-black) !important;
+}
+
+/* Nav */
+.placeholder,
+.\!w-text-white-80,
+.menuitem-label,
+.sidebar-sub-menu-panel>h2,
+.c-page-explorer__item__title,
+.c-page-explorer__header__title,
+/* Nav search */
+#menu-search-q::placeholder {
+    color: var(--w-color-white) !important;
+}
+
+/* Nav Hover */
+.sidebar-menu-item:hover {
+    background-color: var(--w-color-primary-200);
+}
+
+.sidebar-menu-item--in-sub-menu:hover {
+    background-color: var(--w-color-primary);
+}
+
+/* Settings nav footer */
+.w-field__label,
+
+/*# Account #*/
+.sidebar-footer__account-label,
+.w-text-primary,
+.w-text-primary:hover,
+
+/* Actions */
+.w-sr-only,
+
+/* Login */
+.login h1,
+.login,
+.menuitem-label,
+.sidebar-sub-menu-panel>h2,
+.c-page-explorer__item__title,
+.c-page-explorer__header__title {
+    color: var(--custom-color-black);
+    text-shadow: none;
+}
+
+.tippy-content a,
+.sidebar-sub-menu-panel__footer,
+.sidebar-footer__account-label,
+.w-label-3 {
+    color: var(--w-color-white) !important;
+}
+
+/* Icons */
+.icon {
+    fill: #F3F7FF;
+}
+
+.w-summary .icon {
+    fill: var(--w-color-primary)
+}
+
+.w-text-grey-400:hover,
+.icon:hover {
+    color: var(--custom-color-black);
+}
+
+/* Dashboard */
+.w-summary {
+    color: var(--w-color-secondary);
+}
+
+
+.w-tabs__tab[aria-selected=false] {
+    color: var(--custom-color-gray);
+}
+
+.w-tabs__tab[aria-selected=false]:hover,
+.w-tabs__tab[aria-selected=true] {
+    color: var(--custom-color-black);
+}
+
+.w-tabs__tab:after {
+    background-color: var(--custom-color-black);
+}
+
+.w-flex .icon-history,
+.w-flex .icon-info-circle,
+.w-flex .icon-comment,
+.w-flex .icon-mobile-alt {
+    fill: var(--custom-color-black) !important;
+}
+
+/* Calendar */
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current {
+    background-color: var(--custom-calendar-color);
+}
+
+.xdsoft_date:hover,
+.xdsoft_time:hover {
+    background-color: var(--w-color-secondary-400) !important;
+}
+
+.w-header .icon,
+.nice-padding .icon,
+.tab-content .icon {
+    fill: var(--w-color-secondary) !important;
+}
+
+/* Errro Page */
+
+.page404__bg,
+a.button.page404__button {
+    background-color: var(--w-color-primary);
+    border-color: var(--w-color-secondary-400)
+}
+
+a.button.page404__button:hover {
+    background-color: var(--w-color-secondary-400)
+}
