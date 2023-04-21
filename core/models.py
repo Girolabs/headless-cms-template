@@ -56,6 +56,7 @@ class HomePage(Page):
         APIField("created_at"),
         APIField("updated_at"),
     ]
+    preview_modes = []
     subpage_types = []
     parent_page_types = ["wagtailcore.Page"]
     max_count = 1
@@ -105,6 +106,7 @@ class ReinsurersItem(Orderable):
         APIField("created_at"),
         APIField("updated_at"),
     ]
+    preview_modes = []
 
     class Meta:
         verbose_name = _("Reseguradora")
@@ -194,6 +196,7 @@ class InformationPage(Page):
         APIField("created_at"),
         APIField("updated_at"),
     ]
+    preview_modes = []
     subpage_types = []
     parent_page_types = ["wagtailcore.Page"]
     max_count = 1
@@ -243,6 +246,7 @@ class FooterDocumentItemFirstColumn(Orderable):
         APIField("created_at"),
         APIField("updated_at"),
     ]
+    preview_modes = []
 
     class Meta:
         verbose_name = _("Documento")
@@ -279,6 +283,7 @@ class FooterDocumentItemSecondColumn(Orderable):
         APIField("created_at"),
         APIField("updated_at"),
     ]
+    preview_modes = []
 
     class Meta:
         verbose_name = _("Documento")
@@ -323,6 +328,7 @@ class FooterPage(Page):
         APIField("footer_document_second_column"),
         APIField("footer_links"),
     ]
+    preview_modes = []
     subpage_types = []
     parent_page_types = ["wagtailcore.Page"]
     max_count = 1
