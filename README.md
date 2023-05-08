@@ -30,12 +30,7 @@ Awesome description goes here
        DB_PASSWORD=cms_backend
        DB_NAME=cms_backend
        DB_HOST=127.0.0.1
-       DB_PORT=5432
-       EMAIL_HOST=emaillhost
-       EMAIL_FROM=emailfrom
-       EMAIL_PORT=emailport
-       EMAIL_USER=emailuser
-       EMAIL_PASSWORD=emailpassword
+       DB_PORT=3306
        FRONTEND_URL=frontenturl
        EMAIL_USE_SSL=true
        EMAIL_USE_TLS=false
@@ -61,3 +56,5 @@ Awesome description goes here
    ```bash
    pipenv run python manage.py runserver
    ```
+
+OBS: la configuración del servicio de mail se realiza dentro del CMSc en Propiedades -> Configuración SMTP
