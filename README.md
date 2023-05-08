@@ -57,4 +57,4 @@ Awesome description goes here
    pipenv run python manage.py runserver
    ```
 
-OBS: la configuración del servicio de mail se realiza dentro del CMSc en Propiedades -> Configuración SMTP
+OBS: la configuración del servicio de mail se realiza dentro del CMS en Propiedades -> Configuración SMTP
