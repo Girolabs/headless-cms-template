@@ -1,4 +1,7 @@
+from django import forms
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
 
@@ -9,8 +12,64 @@ from wagtail.models import Page, Orderable
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import InlinePanel, MultiFieldPanel
 from wagtail.models import Page
+from wagtail.contrib.settings.models import (
+    BaseGenericSetting,
+    register_setting,
+)
 
 from core import blocks
+
+
+@register_setting
+class EmailSettings(BaseGenericSetting):
+    ENCRYPTION_CHOICES = (
+        ("NONE", "Ninguno"),
+        ("SSL", "SSL"),
+        ("TLS", "TLS"),
+    )
+    email_user = models.CharField(
+        verbose_name="Usuario", max_length=255, default="", blank=True
+    )
+    email_password = models.CharField(
+        verbose_name="Contraseña", max_length=255, default="", blank=True
+    )
+    email_from = models.CharField(
+        verbose_name="Remitente",
+        help_text="usuario@dominio.com",
+        max_length=255,
+        default="",
+        blank=True,
+    )
+    email_host = models.CharField(
+        verbose_name="Servidor", max_length=255, default="", blank=True
+    )
+    email_port = models.PositiveIntegerField(
+        verbose_name="Puerto", null=True, blank=True
+    )
+    email_encryption = models.CharField(
+        verbose_name="Cifrado", choices=ENCRYPTION_CHOICES, default="NONE", max_length=4
+    )
+
+    password_widget = forms.TextInput(attrs={"type": "password"})
+
+    panels = [
+        FieldPanel("email_user"),
+        FieldPanel("email_password", widget=password_widget),
+        FieldPanel("email_from"),
+        FieldPanel("email_host"),
+        FieldPanel("email_port"),
+        FieldPanel("email_encryption"),
+    ]
+
+    class Meta:
+        verbose_name = "Configuración SMTP"
+
+
+@receiver(post_save, sender=EmailSettings)
+def update_settings(sender, instance, **kwargs):
+    from django.conf import settings
+
+    settings.DEFAULT_FROM_EMAIL = instance.email_from
 
 
 class HomePage(Page):

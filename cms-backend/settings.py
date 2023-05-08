@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.modeladmin",
+    "wagtail.contrib.settings",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -187,13 +188,7 @@ WAGTAILSEARCH_BACKENDS = {
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-EMAIL_HOST = config.get("EMAIL_HOST")
-EMAIL_PORT = config.get("EMAIL_PORT")
-EMAIL_HOST_USER = config.get("EMAIL_USER")
-EMAIL_FROM = config.get("EMAIL_FROM")
-EMAIL_HOST_PASSWORD = config.get("EMAIL_PASSWORD")
-EMAIL_USE_SSL = True if config.get("EMAIL_USE_SSL").lower() in ["true", 1] else False
-EMAIL_USE_TLS = True if config.get("EMAIL_USE_TLS").lower() in ["true", 1] else False
+EMAIL_BACKEND = "core.smtp.EmailBackend"
 
 FRONTEND_URL = config.get("FRONTEND_URL")
 
@@ -204,4 +199,4 @@ FRONTEND_URL = config.get("FRONTEND_URL")
 WAGTAIL_SITE_NAME = "cms-backend"
 WAGTAILADMIN_BASE_URL = config.get("ADMIN_BASE_URL", "http://example.com")
 WAGTAIL_ENABLE_UPDATE_CHECK = False
-DEFAULT_FROM_EMAIL = EMAIL_FROM
+DEFAULT_FROM_EMAIL = "CMS Backend <cms@backend.com>"
