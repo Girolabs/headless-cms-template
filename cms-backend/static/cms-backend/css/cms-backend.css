@@ -158,3 +158,24 @@ a.button.page404__button {
 a.button.page404__button:hover {
     background-color: var(--w-color-secondary-400)
 }
+
+/* Group perms */
+.title .w-label-3 {
+    color: var(--custom-color-black) !important;
+}
+
+
+/* Dropdwn */
+.dropdown.dropdown-button--white li .button {
+    background-color: var(--w-color-primary) !important;
+    color: var(--w-color-white) !important
+}
+
+.dropdown.dropdown-button--white li .button:hover {
+    background-color: var(--w-color-secondary-400) !important
+}
+
+/* RichTextField icon toolbar */
+.Draftail-InlineToolbar .icon {
+    fill: var(--w-color-white) !important;
+}
