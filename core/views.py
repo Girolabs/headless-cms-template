@@ -16,6 +16,7 @@ from wagtail.api.v2.filters import (
     SearchFilter,
     TranslationOfFilter,
 )
+from core.paginations import WagtailAPIPagination
 
 
 class PagesAPIViewSet(BaseAPIViewSet):
@@ -23,6 +24,7 @@ class PagesAPIViewSet(BaseAPIViewSet):
     Our custom Pages API endpoint that allows finding pages by pk or slug
     """
 
+    pagination_class = WagtailAPIPagination
     base_serializer_class = PageSerializer
     filter_backends = [
         FieldsFilter,
