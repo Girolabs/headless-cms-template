@@ -1,3 +1,4 @@
+from django.conf import settings
 from wagtail import blocks
 from wagtail.documents.blocks import DocumentChooserBlock as DefaultDocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock as DefaultImageChooserBlock
@@ -6,26 +7,24 @@ from wagtail.core.models import Site
 
 class ImageChooserBlock(DefaultImageChooserBlock):
     def get_api_representation(self, value, context=None):
-        site = Site.objects.all().first()
         if value:
             return {
                 "id": value.id,
                 "title": value.title,
-                "detail_url": f"{site.root_url}/api/images/{value.id}/",
-                "download_url": f"{site.root_url}{value.file.url}",
+                "detail_url": f"{settings.WAGTAILADMIN_BASE_URL}/api/images/{value.id}/",
+                "download_url": f"{settings.WAGTAILADMIN_BASE_URL}{value.file.url}",
             }
         return super().get_api_representation(value, context)
 
 
 class DocumentChooserBlock(DefaultDocumentChooserBlock):
     def get_api_representation(self, value, context=None):
-        site = Site.objects.all().first()
         if value:
             return {
                 "id": value.id,
                 "title": value.title,
-                "detail_url": f"{site.root_url}/api/documents/{value.id}/",
-                "download_url": f"{site.root_url}{value.file.url}",
+                "detail_url": f"{settings.WAGTAILADMIN_BASE_URL}/api/documents/{value.id}/",
+                "download_url": f"{settings.WAGTAILADMIN_BASE_URL}{value.file.url}",
             }
         return super().get_api_representation(value, context)
 
