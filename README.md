@@ -21,21 +21,20 @@ Awesome description goes here
 
 2. En la carpeta raíz, crea un archivo `.env` con el siguiente contenido:
 
-   ```
-       DEBUG=True
-       SECRET_KEY=supersecretkey
-       ALLOWED_HOSTS=*
-       CORS_ALLOWED_ORIGINS=allowed_origins
-       DB_USER=cms_backend
-       DB_PASSWORD=cms_backend
-       DB_NAME=cms_backend
-       DB_HOST=127.0.0.1
-       DB_PORT=3306
-       FRONTEND_URL=frontenturl
-       EMAIL_USE_SSL=true
-       EMAIL_USE_TLS=false
-       ADMIN_BASE_URL=cms_url
-
+   ```bash
+    DEBUG=True
+    SECRET_KEY=supersecretkey
+    ALLOWED_HOSTS=*
+    CORS_ALLOWED_ORIGINS=allowed_origins
+    DB_USER=cms_backend
+    DB_PASSWORD=cms_backend
+    DB_NAME=cms_backend
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    FRONTEND_URL=frontenturl
+    EMAIL_USE_SSL=true
+    EMAIL_USE_TLS=false
+    ADMIN_BASE_URL=cms_url
    ```
 
 3. Instala las dependencias del proyecto:
