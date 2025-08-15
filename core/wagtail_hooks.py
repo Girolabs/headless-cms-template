@@ -1,6 +1,7 @@
 from django.utils.html import format_html
 from django.templatetags.static import static
 from django.urls import reverse, NoReverseMatch
+from django.shortcuts import redirect
 from wagtail.core import hooks
 from wagtail.admin.widgets import Button
 
@@ -47,3 +48,11 @@ def api_view_button(page, page_type, user):
         )
     except NoReverseMatch:
         pass
+
+
+@hooks.register("after_edit_page")
+def after_edit_page(request, page):
+
+    if request.method == "POST":
+        target_url = reverse("wagtailadmin_pages:edit", args=[page.id])
+        return redirect(target_url)
