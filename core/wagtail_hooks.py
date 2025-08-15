@@ -1,6 +1,8 @@
 from django.utils.html import format_html
 from django.templatetags.static import static
+from django.urls import reverse, NoReverseMatch
 from wagtail.core import hooks
+from wagtail.admin.widgets import Button
 
 
 @hooks.register("construct_page_listing_buttons")
@@ -28,3 +30,20 @@ def global_admin_css():
     return format_html(
         '<link rel="stylesheet" href="{}">', static("cms-backend/css/cms-backend.css")
     )
+
+
+@hooks.register("register_page_header_buttons")
+def api_view_button(page, page_type, user):
+    """
+    Add a "View in API" button in the page editor header.
+    """
+    try:
+        api_url = reverse("wagtailapi:pages:detail", args=[page.id])
+        yield Button(
+            label="Ver en la API",
+            url=api_url,
+            icon_name="code",
+            attrs={"target": "_blank", "rel": "noopener noreferrer"},
+        )
+    except NoReverseMatch:
+        pass
